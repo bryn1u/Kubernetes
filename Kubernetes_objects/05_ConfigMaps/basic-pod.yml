@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   labels:
     chapter: configmaps
-  name: envpod
+  name: podzconfigmapa
 spec:
   containers:
     - name: ctr1
@@ -13,10 +13,10 @@ spec:
         - name: FIRSTNAME
           valueFrom:
             configMapKeyRef:
-              name: multimap
+              name: myconfigmap
               key: given
         - name: LASTNAME
           valueFrom:
             configMapKeyRef:
-              name: multimap
+              name: myconfigmap
               key: family
