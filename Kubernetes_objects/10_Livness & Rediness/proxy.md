@@ -1,0 +1,1 @@
+http://localhost:8001/api/v1/namespaces/default/services/http:service-web-api-liveness-readiness:/proxy/health

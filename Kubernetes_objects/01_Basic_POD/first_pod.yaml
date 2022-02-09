@@ -8,6 +8,14 @@ spec:
     image: nginx:1.17
     ports:
     - containerPort: 80
+    resources:
+      requests:
+        cpu: 1.5
+        memory: 220Mi
+      limits:
+        cpu: 200m
+        memory: 450Mi
+
 
 
 
