@@ -1,2 +1,2 @@
 # Kubernetes
-Materiały na szkolenie dla ING.
+Moje materiały na szkolenie dla ING.
