@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: lb-ctr
-            resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         image: k8smaestro/host-detector:1.0
         ports:
         - containerPort: 8080

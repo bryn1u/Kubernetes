@@ -17,6 +17,10 @@ spec:
         image: nginx:1.20
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: 300m
+            memory: 500Mi
 ---
 apiVersion: v1
 kind: Service

@@ -6,11 +6,19 @@ spec:
   containers:
   - name: first-ctr
     image: k8smaestro/web-app:1.0
+    resources:
+      limits:
+        cpu: 300m
+        memory: 500Mi
     volumeMounts:
     - name: shared-data
       mountPath: /usr/share/nginx/html
   - name: second
     image: debian:stretch-slim
+    resources:
+      limits:
+        cpu: 300m
+        memory: 500Mi
     volumeMounts:
     - name: shared-data
       mountPath: /pod-data
