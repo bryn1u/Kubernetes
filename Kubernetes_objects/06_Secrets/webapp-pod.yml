@@ -12,6 +12,10 @@ spec:
     - mountPath: "/etc/webapp"
       name: webapp-secret-vol
       readOnly: true
+    resources:
+      limits:
+        cpu: 200m
+        memory: 250Mi
   volumes:
   - name: webapp-secret-vol
     secret: 
