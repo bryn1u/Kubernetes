@@ -14,9 +14,12 @@ spec:
     - mountPath: /etc/nginx/conf.d # mount nginx-conf volume to /etc/nginx/conf.d
       readOnly: true
       name: nginx-conf
-    - mountPath: /usr/share/nginx/html/
+    - mountPath: /usr/share/nginx/html
       readOnly: true
       name: html-conf
+    - mountPath: /usr/share/nginx
+      readOnly: true
+      name: moja-cm
     resources:
       limits:
         memory: 150Mi
@@ -34,3 +37,9 @@ spec:
       items:
         - key: html.conf
           path: index.html
+  - name: moja-cm
+    configMap:
+      name: moja-cm
+      items:
+        - key: wlasnyindex.conf
+          path: wlasnyindex.html
