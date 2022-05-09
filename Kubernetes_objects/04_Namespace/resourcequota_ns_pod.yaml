@@ -15,7 +15,7 @@ spec:
     requests.memory: 1Gi # request: Sum of CPU
     limits.cpu: "1"
     limits.memory: 2Gi # limit: Sum of memory
-    #requests.nvidia.com/gpu: 4
+    requests.nvidia.com/gpu: 4
 ---
 apiVersion: apps/v1
 kind: Deployment

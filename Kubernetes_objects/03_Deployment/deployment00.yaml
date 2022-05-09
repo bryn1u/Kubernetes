@@ -4,10 +4,14 @@ metadata:
   name: deployment
   labels:
     app: nginx
+  annotations:
+    kubernetes.io/change-cause: "new app version"
 spec:
-  replicas: 3
-  strategy: 
-    type: RollingUpdate
+  replicas: 4
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
   selector:
     matchLabels:
       app: nginx
@@ -18,7 +22,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.18
+        image: nginx:latest
         ports:
         - containerPort: 80
-
