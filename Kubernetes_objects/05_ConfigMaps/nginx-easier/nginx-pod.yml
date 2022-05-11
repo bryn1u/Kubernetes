@@ -14,10 +14,6 @@ spec:
     - mountPath: /usr/share/nginx/html/
       readOnly: true
       name: html-conf
-    resources:
-      limits:
-        memory: 150Mi
-        cpu: 200m
   volumes:
   - name: html-conf
     configMap:
@@ -25,3 +21,12 @@ spec:
       items:
         - key: html.conf
           path: index.html
+---
+
+- wlasna configmapa
+  - nazwa cm users-home
+  - nazwa volumena users-home
+  - mountPath /home
+  - w /home ma sie znalezc plik z nazwa waszego ck.
+    a ten plik ma sie nazywa user.conf
+  

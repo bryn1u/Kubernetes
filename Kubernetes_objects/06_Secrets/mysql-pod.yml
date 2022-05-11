@@ -10,7 +10,7 @@ spec:
     image: mysql:5.7
     resources:
       limits:
-        memory: 200Mi
+        memory: 500Mi
         cpu: 200m
     env:
     - name: MYSQL_USER
@@ -25,3 +25,6 @@ spec:
           key: DB_PASSWORD
     - name: MYSQL_RANDOM_ROOT_PASSWORD
       value: "1"
+
+- LOGIN_CK
+- PASSWORD

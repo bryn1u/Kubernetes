@@ -19,9 +19,53 @@ spec:
     metadata:
       labels:
         app: nginx
+        name: mysql-selector
     spec:
       containers:
       - name: nginx
         image: nginx:latest
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-mysql
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: LoadBalancer
+  selector:
+    name: mysql-selector
+
+
+03 - Deployment00.yaml
+06 - mysql-pod.yaml
+07 - load-balancer.yaml
+
+Deployment:
+Replica - 5
+Rollingupdate - dodatkowe pody podczas tworzenia 2
+                niedostepnosc 50%
+
+Pod/container - mysql 06 - mysql-pod - container port 3306
+Service - typu loadblanacer - 80 -> 3306
+Pamietajcie o selectorach i labelkach
+Wszystko w jednej templatce czyli deplouyment i service.
+
+84.84.84.84 
+
+telnet 84.84.84.84 80
+
+80 - 3306 
+
+Proton:ingress bryn1u$ telnet 51.124.85.119 80
+Trying 51.124.85.119...
+Connected to 51.124.85.119.
+Escape character is '^]'.
+J
+5.7.3;8zh&xm*Ji|xmysql_native_passwordConnection closed by foreign host.
+
+

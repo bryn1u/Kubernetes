@@ -20,3 +20,5 @@ spec:
     - name: volume
       persistentVolumeClaim:
         claimName: azure-managed-disk
+
+        

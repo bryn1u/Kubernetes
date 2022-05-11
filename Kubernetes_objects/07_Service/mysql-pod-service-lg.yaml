@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  replicas: 4
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: mysql-selector
+  template:
+    metadata:
+      labels:
+        app: mysql-selector
+        name: mysql-selector
+    spec:
+      containers:
+      - name: mysql-ctr
+        image: mysql:5.7
+        ports:
+        - containerPort: 3306
+        resources:
+          requests:
+            cpu: 200m
+            memory: 220Mi
+          limits:
+            cpu: 300m
+            memory: 500Mi
+        env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: DB_USER
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret  
+              key: DB_PASSWORD
+        - name: MYSQL_RANDOM_ROOT_PASSWORD
+          value: "1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-mysql
+spec:
+  ports:
+    - port: 80
+      targetPort: 3306
+      protocol: TCP
+  type: LoadBalancer
+  selector:
+    name: mysql-selector
