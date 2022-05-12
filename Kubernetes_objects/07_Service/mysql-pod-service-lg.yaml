@@ -57,3 +57,8 @@ spec:
   type: LoadBalancer
   selector:
     name: mysql-selector
+
+mount
+df -h
+
+/mnt/azure - /var/lib/mysql

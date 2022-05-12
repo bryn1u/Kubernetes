@@ -26,6 +26,10 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+  limits:
+    cpu: 500m
+    memory: 800Mi
+
 ---
 apiVersion: v1
 kind: Service

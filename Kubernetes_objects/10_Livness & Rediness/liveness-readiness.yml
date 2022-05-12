@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: web-api-liveness-readiness
 spec:
+  replicas: 5
   selector:
     matchLabels:
       name: web-api-liveness-readiness
@@ -19,19 +20,19 @@ spec:
         readinessProbe:
           initialDelaySeconds: 10
           httpGet:
-            path: "/health"
+            path: "/healthh"
             port: 80
-            httpHeaders:
-            - name: "Cookie"
-              value: "session-id=x-readiness-probe"
+            # httpHeaders:
+            # - name: "Cookie"
+            #   value: "session-id=x-readiness-probe"
         livenessProbe:
           initialDelaySeconds: 10
           httpGet:
             path: "/health"
             port: 80
-            httpHeaders:
-            - name: "Cookie"
-              value: "session-id=x-liveness-probe"
+            # httpHeaders:
+            # - name: "Cookie"
+            #   value: "session-id=x-liveness-probe"
         resources:
           requests:
             cpu: 100m
@@ -49,7 +50,7 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     name: web-api-liveness-readiness
 

@@ -12,7 +12,7 @@ spec:
   csi:
     driver: disk.csi.azure.com
     readOnly: false
-    volumeHandle: /subscriptions/84cdad87-627c-4106-af74-6c48bff2ba32/resourceGroups/rs-aks/providers/Microsoft.Compute/disks/aks-disk
+    volumeHandle: /subscriptions/84cdad87-627c-4106-af74-6c48bff2ba32/resourceGroups/rs-aks/providers/Microsoft.Compute/disks/aks-disk2
     volumeAttributes:
       fsType: ext4
 

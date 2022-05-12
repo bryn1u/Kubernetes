@@ -28,10 +28,10 @@ metadata:
   name: lb-demo-svc
 spec:
   ports:
-    - port: 80
-      targetPort: 8080
+    - port: 3306
+      targetPort: 3306
       protocol: TCP
   type: LoadBalancer
   selector:
-    name: lb-demo
+    name: mysql-selector
 

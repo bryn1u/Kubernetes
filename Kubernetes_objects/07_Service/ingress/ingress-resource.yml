@@ -31,4 +31,10 @@ spec:
             name: weather-api-svc
             port: 
               number: 80
-
+      - path: /mysql
+        pathType: Prefix
+        backend:
+          service:
+            name: mysql-service
+            port: 
+              number: 80 -> 3306 -> 3306(mysql-server)

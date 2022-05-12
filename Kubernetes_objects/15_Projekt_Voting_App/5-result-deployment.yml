@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: demo-voting-app
+      name: result-app-pod
+  template:
+    metadata:
+      labels:
+        app: demo-voting-app
+        name: result-app-pod
+    spec:
+      containers:
+      - name: result-app
+        image: lextsy/examplevotingapp_result
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
