@@ -18,7 +18,6 @@ spec:
             port:
               number: 80
       - path: /v2/()(.*)
-        pathType: Prefix
         backend:
           service: 
             name: passage-v2-webapp-svc
@@ -31,10 +30,3 @@ spec:
             name: weather-api-svc
             port: 
               number: 80
-      - path: /mysql
-        pathType: Prefix
-        backend:
-          service:
-            name: mysql-service
-            port: 
-              number: 80 -> 3306 -> 3306(mysql-server)

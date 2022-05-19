@@ -51,14 +51,14 @@ metadata:
   name: service-mysql
 spec:
   ports:
-    - port: 80
+    - port: 3306
       targetPort: 3306
       protocol: TCP
   type: LoadBalancer
   selector:
     name: mysql-selector
 
-mount
-df -h
+# mount
+# df -h
 
-/mnt/azure - /var/lib/mysql
+# /mnt/azure - /var/lib/mysql

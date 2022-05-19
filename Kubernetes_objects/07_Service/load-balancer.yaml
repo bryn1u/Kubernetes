@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         name: lb-demo
+        svc: mysql-selector
     spec:
       containers:
       - name: lb-ctr
@@ -19,6 +20,7 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         image: k8smaestro/host-detector:1.0
+        # image: nginx:1.20
         ports:
         - containerPort: 8080
 ---
@@ -28,10 +30,10 @@ metadata:
   name: lb-demo-svc
 spec:
   ports:
-    - port: 3306
-      targetPort: 3306
+    - port: 80
+      targetPort: 8080
       protocol: TCP
   type: LoadBalancer
   selector:
-    name: mysql-selector
+    svc: mysql-selector
 
