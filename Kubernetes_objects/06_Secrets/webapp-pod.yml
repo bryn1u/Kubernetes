@@ -25,5 +25,5 @@ spec:
       - key: username
         path: username
       - key: password
-        path: secure/password
+        path: password
         mode: 0400 #overriding defaultMode
