@@ -25,9 +25,3 @@ spec:
           memory: "128Mi"
           cpu: "500m"
 
-
-
-
-# FIRSTNAME=Roman
-# LASTNAME=Erotoman
-# COMPANY=ING

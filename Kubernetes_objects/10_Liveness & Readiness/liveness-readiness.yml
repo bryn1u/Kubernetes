@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: webapi
-        image: k8smaestro/web-api:1.0
+        # image: k8smaestro/web-api:1.0
+        image: iamassistant.azurecr.io/nodeapp:latest
         ports:
         - containerPort: 80
         readinessProbe:
