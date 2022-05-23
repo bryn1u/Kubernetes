@@ -21,12 +21,4 @@ spec:
       items:
         - key: html.conf
           path: index.html
----
 
-- wlasna configmapa
-  - nazwa cm users-home
-  - nazwa volumena users-home
-  - mountPath /home
-  - w /home ma sie znalezc plik z nazwa waszego ck.
-    a ten plik ma sie nazywa user.conf
-  

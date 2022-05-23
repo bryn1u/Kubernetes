@@ -29,8 +29,3 @@ spec:
         - key: nginx.conf
           path: default.conf
 
-
-- stworz nowy obiekt confimap dodaj do niego index.html i wrzuca tam jakas zawartosc np "edzio pedzio"
-- stowrz trzeci obiekt config map w ktorym bedziesz przechowywal swoje CK i to CK ma byc udostepnione w 
-  kontenerze w katalogu /home/mojeck.conf
-- nie wchodza do kontenera wyswietl czy plik zostal zaimportowany "ls -l /home/"
