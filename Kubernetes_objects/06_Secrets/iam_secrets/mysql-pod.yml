@@ -6,15 +6,15 @@ metadata:
     app: mysql
 spec:
   containers:
-  - name: mysql-ctr
-    image: mysql:5.7
-    resources:
-      requests:
-        cpu: 400M
-        memory: 500Mi
-      limits:
-        cpu: 800M
-        memory: 900Mi
+  - name: mysql
+    image: mysql
+#    resources:
+#      requests:
+#        cpu: 400M
+#        memory: 500Mi
+#      limits:
+#        cpu: 800M
+#        memory: 900Mi
     env:
     - name: MYSQL_USER
       valueFrom:
@@ -28,3 +28,4 @@ spec:
           key: DB_PASSWORD
     - name: MYSQL_RANDOM_ROOT_PASSWORD
       value: "1"
+
